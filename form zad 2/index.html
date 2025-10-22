@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="odp.php" method="post">
+        <label for="ile_galek">Ile gałek:</label>
+        <input id="ile_galek" type="number" name="ile_galek" value="1" min="1"><br>
+
+        <input type="radio" name="rozek" value="zwykly" checked id="zwykly">
+        <label for="zwykly">Rożek zwykły</label><br>
+        <input type="radio" name="rozek" value="dunski" id="dunski">
+        <label for="dunski">Rożek duński (lepszy)</label><br>
+
+        <input type="checkbox" name="posypka" id="posypka">
+        <label for="posypka">posypka</label><br>
+        <input type="checkbox" name="polewa" id="polewa">
+        <label for="polewa">polewa</label><br>
+        <input type="checkbox" name="polewa_czekoladowa" id="polewa_czekoladowa">
+        <label for="polewa_czekoladowa">polewa czekoladowa</label><br>
+
+        <input type="submit">
+    </form>
+</body>
+</html>
