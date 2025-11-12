@@ -25,7 +25,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-				  <a class="nav-link active" aria-current="page" href="#">Strona główna</a>
+				  <a class="nav-link active" aria-current="page" href="./">Strona główna</a>
 				</li>
 
 				<li class="nav-item dropdown">
@@ -33,9 +33,9 @@
 					Nasze kwiaty
 				  </a>
 				  <ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="#">róże</a></li>
-					<li><a class="dropdown-item" href="#">tulipany</a></li>
-					<li><a class="dropdown-item" href="#">godziki</a></li>
+					<li><a class="dropdown-item" href="?typ=róże">róże</a></li>
+					<li><a class="dropdown-item" href="?typ=tulipany">tulipany</a></li>
+					<li><a class="dropdown-item" href="?typ=goździki">goździki</a></li>
 				  </ul>
 				</li>
 
@@ -61,7 +61,14 @@
 			
 		  <div class="row">
 		  <?php
-		    $q = "SELECT * FROM kwiaty";
+			if(isset($_GET["typ"]))
+			{
+				$typ = mysqli_real_escape_string($con, $_GET["typ"]);
+				$q = "SELECT * FROM kwiaty WHERE kategoria=\"$typ\"";
+				//echo $q;
+			}
+			else
+				$q = "SELECT * FROM kwiaty";
 			$result = mysqli_query($con, $q);
 			while ($row = mysqli_fetch_assoc($result))
 			{
